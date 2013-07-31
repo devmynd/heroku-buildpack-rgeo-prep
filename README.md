@@ -10,7 +10,7 @@ This solution closely follows this [blog article](https://devcenter.spacialdb.co
 Create this .buildpacks file in the root of your project.
 
     https://github.com/peterkeen/heroku-buildpack-vendorbinaries.git
-    https://github.com/aaronrenner/heroku-buildpack-rgeo-prep.git
+    https://github.com/devmynd/heroku-buildpack-rgeo-prep.git
     https://github.com/heroku/heroku-buildpack-ruby.git
 
 Create this .vendor_urls file in the root of your project.
@@ -28,7 +28,7 @@ If you haven't already set up your heroku database for postgis, you need to run 
 
 Since postgis uses different settings in the database.yml, you need to modify the DATABASE_URL variable. Run the following command and extract the nessecary components out of it:
 
-    $ heroku config:get DATABASE_URL 
+    $ heroku config:get DATABASE_URL
     postgres://<username>:<password>@<host>:<port>/<database>
 
 With those variables, run the following command
@@ -43,7 +43,7 @@ Enable PostGIS
 Deploy
 
     git push heroku master
-    
+
 Verify it worked
 
     heroku run bash
